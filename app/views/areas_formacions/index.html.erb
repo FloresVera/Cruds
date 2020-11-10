@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1 class="m-3">Areas Formacions</h1>
+<table class="table table-dark"><thead>
+<tr>
+    <th>Id</th><th>Area formacion</th><th class="text-center">Asignatura</th><th colspan="2"></th>
+    <th class="text-center"><%= link_to 'Nueva Areas Formacion', new_areas_formacion_path, :class => "btn btn-primary" %></th>
+
+</tr>
+</thead>
+<tbody>
+  <% @areas_formacions.each do |areas_formacion| %>
+    <tr>
+    <td><%= areas_formacion.id %></td>
+    <td><%= areas_formacion.area_fomacion %></td>
+    <td class="text-center"><%= link_to 'Asignaturas', areas_formacions_asignaturas_path(areas_formacion.id), :class => "btn btn-primary" %></td>
+    <td class="text-center"><%= link_to 'Editar', edit_areas_formacion_path(areas_formacion), :class => "btn btn-success" %></td>
+    <td class="text-center"><%= link_to 'Borrar', areas_formacion, method: :delete, data: { confirm: 'Esta seguro?' }, :class => "btn btn-danger"%></td>
+    <td class="text-center"><%= link_to 'Mostrar', areas_formacion, :class => "btn btn-primary" %></td>
+    </tr>   
+<% end %>
+</tbody>
+</table>
+</div>

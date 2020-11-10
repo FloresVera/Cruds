@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1 class="m-3"><%= $asignatura.asignatura %> - Objetivos <span class="h5"><%= link_to 'Volver', areas_formacions_asignaturas_path($asignatura.area_formacion_id) %></span></h1>
+<table class="table table-dark"><thead>
+<tr>
+    <th>Id</th><th>Objetivo</th><th>Asignatura</th><th colspan="2"></th>
+    <th class="text-center"><%= link_to 'Nuevo Objetivo', new_objetivo_path, :class => "btn btn-primary" %></th>
+
+</tr>
+</thead>
+<tbody>
+  <% @objetivos.each do |objetivo| %>
+    <tr>
+    <td><%= objetivo.id %></td>
+    <td><%= objetivo.objetivo %></td>
+    <td><%= objetivo.asignatura_id %></td>
+    <td class="text-center"><%= link_to 'Editar', edit_objetivo_path(objetivo), :class => "btn btn-success" %></td>
+    <td class="text-center"><%= link_to 'Borrar', objetivo, method: :delete, data: { confirm: 'Esta seguro?' }, :class => "btn btn-danger"%></td>
+    <td class="text-center"><%= link_to 'Mostrar', objetivo, :class => "btn btn-primary" %></td>
+    </tr>   
+<% end %>
+</tbody>
+</table>
+</div>

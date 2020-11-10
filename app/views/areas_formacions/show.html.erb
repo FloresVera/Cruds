@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">
+  <strong>Area formacion:</strong>
+  <%= @areas_formacion.area_fomacion %>
+    </li>
+  </ul>
+  <%= link_to 'Editar', edit_areas_formacion_path(@areas_formacion), :class => "btn btn-success"  %> |
+  <%= link_to 'Volver', areas_formacions_path, :class => "btn btn-primary"  %>
+</div>
+
+
+
+

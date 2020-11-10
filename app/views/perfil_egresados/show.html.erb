@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <p>
+        <strong>Perfil:</strong>
+        <%= @perfil_egresado.perfil %>
+      </p>
+    </li>
+
+    <li class="list-group-item">
+      <p>
+        <strong>Asignatura:</strong>
+        <%= @perfil_egresado.asignatura_id %>
+      </p>
+    </li>
+  </ul>
+  <%= link_to 'Editar', edit_perfil_egresado_path(@perfil_egresado), :class => "btn btn-success" %> |
+  <%= link_to 'Volver', areas_formacions_asignaturas_path($asignatura.area_formacion_id), :class => "btn btn-primary" %>
+</div>

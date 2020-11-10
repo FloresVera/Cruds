@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <p>
+        <strong>Asignatura:</strong>
+        <%= @objetivo.asignatura_id %>
+      </p>
+    </li>
+    <li class="list-group-item">
+      <p>
+        <strong>Objetivo:</strong>
+        <%= @objetivo.objetivo %>
+      </p>
+    </li>
+  </ul>
+<%= link_to 'Editar', edit_objetivo_path(@objetivo), :class => "btn btn-success" %> |
+<%= link_to 'Volver', areas_formacions_asignaturas_path($asignatura.area_formacion_id), :class => "btn btn-primary" %>
+</div>

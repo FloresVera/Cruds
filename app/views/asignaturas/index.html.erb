@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1 class="m-3"><%= $areas_formacion.area_fomacion %> - Asignaturas <span class="h5"><%= link_to 'Volver', areas_formacions_path($areas_formacion.id) %></span></h1>
+<table class="table table-dark"><thead>
+<tr>
+    <th>Id</th><th>Asignatura</th><th>Codigo</th><th>Horas semanales</th><th>Sentido</th><th>Temas</th><th>Objetivos</th><th>Perfiles</th><th>Area formacion</th><th colspan="2"></th>
+    <th class="text-center"><%= link_to 'Nueva Asignatura', new_asignatura_path, :class => "btn btn-primary" %></th>
+
+</tr>
+</thead>
+<tbody>
+  <% @asignaturas.each do |asignatura| %>
+    <tr>
+    <td><%= asignatura.id %></td>
+    <td><%= asignatura.asignatura %></td>
+    <td><%= asignatura.codigo %></td>
+    <td><%= asignatura.horas_semanales %></td>
+    <td><%= asignatura.sentido %></td>
+    <td class="text-center"><%= link_to 'Temas', asignaturas_temas_path(asignatura.id), :class => "btn btn-primary" %></td>
+    <td class="text-center"><%= link_to 'Objetivos', asignaturas_objetivos_path(asignatura.id), :class => "btn btn-primary" %></td>
+    <td class="text-center"><%= link_to 'Perfil', asignaturas_perfil_egresados_path(asignatura.id), :class => "btn btn-primary" %></td>
+    <td><%= asignatura.area_formacion_id %></td>
+    <td class="text-center"><%= link_to 'Editar', edit_asignatura_path(asignatura), :class => "btn btn-success" %></td>
+    <td class="text-center"><%= link_to 'Borrar', asignatura, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%></td>
+    <td class="text-center"><%= link_to 'Mostrar', asignatura, :class => "btn btn-primary" %></td>
+    </tr>   
+<% end %>
+</tbody>
+</table>
+</div>

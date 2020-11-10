@@ -1,0 +1,6 @@
+<h1 class="m-3">Editar Perfil</h1>
+
+<%= render 'form', perfil_egresado: @perfil_egresado %>
+
+<%= link_to 'Mostrar', @perfil_egresado, :class => "btn btn-success" %> |
+<%= link_to 'Volver', areas_formacions_asignaturas_path($asignatura.area_formacion_id), :class => "btn btn-primary" %>

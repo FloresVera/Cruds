@@ -1,0 +1,27 @@
+<div class="container">
+<%= form_with(model: objetivo, local: true) do |form| %>
+  <% if objetivo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(objetivo.errors.count, "error") %> prohibited this objetivo from being saved:</h2>
+
+      <ul>
+        <% objetivo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <p>
+ <label>Nombre</label> <br>
+ <%= form.text_area :objetivo, :class => 'form-control' %>
+ </p>
+
+  <p><label>Asignatura</label>
+    <%= form.select(:asignatura_id, options_from_collection_for_select(Asignatura.all, :id, :asignatura), {}, {:class => 'form-control'}) %> 
+  </p>
+
+ <%= form.submit "Enviar", disable_with: 'Submiting...', :class => 'btn btn-primary' %>
+
+<% end %>
+</div>

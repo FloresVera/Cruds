@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">
+<p>
+  <strong>Area formacion:</strong>
+  <%= @asignatura.area_formacion_id %>
+</p>
+    </li>
+    <li class="list-group-item">
+<p>
+  <strong>Asignatura:</strong>
+  <%= @asignatura.asignatura %>
+</p>
+    </li>
+    <li class="list-group-item">
+<p>
+  <strong>Codigo:</strong>
+  <%= @asignatura.codigo %>
+</p>
+    </li>
+    <li class="list-group-item">
+<p>
+  <strong>Horas semanales:</strong>
+  <%= @asignatura.horas_semanales %>
+</p>
+    </li>
+    <li class="list-group-item">
+<p>
+  <strong>Sentido:</strong>
+  <%= @asignatura.sentido %>
+</p>
+    </li>
+  </ul>
+<%= link_to 'Edit', edit_asignatura_path(@asignatura), :class => "btn btn-success" %> |
+<%= link_to 'Back', asignaturas_path, :class => "btn btn-primary" %>
+</div>
